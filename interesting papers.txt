@@ -1,0 +1,3 @@
+https://arxiv.org/pdf/1711.06788v1.pdf
+https://arxiv.org/pdf/1612.06212.pdf
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
