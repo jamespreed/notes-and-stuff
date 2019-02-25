@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $(document)
+  .ajaxStart(function() {
+    $("#spinner").show();
+  })
+  .ajaxStop(function() {
+    $("#spinner").hide();
+  });
+});
+</script>
+
+<script>
+$(document).ready(function() {
+  $("button").click(function() {
+    
+    var button_id = this.id;
+    var text_select = "#" + button_id + "Text";
+    $(text_select).hide();
+    $.getJSON(
+      "/conda/--version",
+      function(result) {
+        $(text_select).text(result["out"])
+        $(text_select).show()
+    });
+  });
+});
+</script>
+<style>
+  #spinner {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div>
+  <h3>Hello world</h3>
+  <div>{{ msg }}</div>
+  <div id="div1">
+    <span id="spinner">
+      <img src="images/ajax-loader.gif" title="working..." />
+    </span>
+    <span id="versionText">Click to load version...</span>
+    <button id="version">Version</button>
+  </div>
+  
+</div>
+</body>
+</html>
