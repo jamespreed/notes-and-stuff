@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#mainButton').on('click', function() {
+        var $main = $('#mainDiv');
+        // use $main.html( $.get or $.post( url/api ) )
+        $main.load('main2.html'); 
+  });
+});
+</script>
+
+<style>
+img.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: text-bottom;
+}
+.right {
+  text-align: right;
+}
+.top-gap {
+  margin-top: 1.1cm;
+}
+</style>
+</head>
+<body>
+<div class="container" id="top">
+  <h1>Title Element</h1>
+</div>
+<div class="container" id="mainDiv">
+  <div class="row">
+    <div class="column column-25 right">Conda installed correctly:</div>
+    <div class="column column-10"><img src="images/ok.png" class="icon"/></div>
+  </div>
+  <div class="row top-gap">
+    <div class="column column-25 right">
+      <button class="button" type="button" id="mainButton">Continue</button>
+    </div>
+  </div>
+</div>
+</body>

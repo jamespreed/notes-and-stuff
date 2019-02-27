@@ -17,6 +17,7 @@ def check_install():
         msg = 'Anaconda properly installed.'
     return out, msg
     
+    
 @route('/images/<img>')
 def server_image(img):
     return static_file(img, root='./images')
@@ -37,4 +38,4 @@ def conda_cmd(cmd):
     return {'out': out.decode('utf8'), 'err': err.decode('utf8')}
 
 
-run(host='localhost', port=8002)
+run(host='localhost', reload=True, port=8002)
