@@ -21,9 +21,9 @@ class ThreadedFileRemover:
         shutil.rmtree(d)
         return d
 
-    def delete_paths(self):
+    def prune_paths(self):
         with ThreadPoolExecutor(self.num_threads) as pool:
-            threads = [pool.submit(rmtree, d) for d in dirs]
+            threads = [pool.submit(self._rmtree, d) for d in dirs]
             for f in as_completed(threads):
                 try:
                     d = f.result()
