@@ -8,11 +8,11 @@ Settings > Apps > Apps & features > Manage optional features
 Open up port 22 to TCP traffic.
 Either:
 
-* Powershell as Admin > New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+* Powershell as Admin > New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound  -Protocol TCP -Action Allow -LocalPort 22
 Or:
 * Control Panel > System and Security > Windows Defender Firewall > Advanced Settings > Inbound Rules > [Actions] New Rule...
-- Rule Type: Port > TCP : Specific local ports = 22 > Allow the connection > [All] > Name and description
-- (OR) Rule Type: Predefined > OpenSSH Server
+  - Rule Type: Port > TCP : Specific local ports = 22 > Allow the connection > [All] > Name and description
+  - (OR) Rule Type: Predefined > OpenSSH Server
 	
 # Start service
 Control Panel > System and Security > Administrative Tools > run Services
