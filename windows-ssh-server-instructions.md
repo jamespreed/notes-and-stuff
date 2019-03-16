@@ -1,5 +1,6 @@
 # Install server and client
 Settings > Apps > Apps & features > Manage optional features
+
 	- Locate "OpenSSH server" > select Install
 	- Locate "OpenSSH client" > select Install
 	
