@@ -11,15 +11,14 @@ Either:
 * Powershell as Admin > New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH SSH Server' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 Or:
 * Control Panel > System and Security > Windows Defender Firewall > Advanced Settings > Inbound Rules > [Actions] New Rule...
-	- Rule Type: Port > TCP : Specific local ports = 22 > Allow the connection > [All] > Name and description
-	OR
-	- Rule Type: Predefined > OpenSSH Server
+- Rule Type: Port > TCP : Specific local ports = 22 > Allow the connection > [All] > Name and description
+- (OR) Rule Type: Predefined > OpenSSH Server
 	
 # Start service
 Control Panel > System and Security > Administrative Tools > run Services
-	- Locate OpenSSH SSH Server > [right click] Properties
-		- Startup Type: Automatic
-		- Start
+* Locate OpenSSH SSH Server > [right click] Properties
+- Startup Type: Automatic
+- Start
 		
 # Key generation for remote login
 Each user needs a key public and private key pair to SSH into the server.  
@@ -66,7 +65,7 @@ C:\Users\user\.ssh>start .
 ```
 
 [right click] authorized_keys > Properties > Security > Advanced
-	- remove any user that is not "Administrator" or "SYSTEM"
+- remove any user that is not "Administrator" or "SYSTEM"
 	
 Copy both `id_rsa.pub` and `id_rsa` to a thumbdrive (don't email them).  Copy them from the thumbdrive to remote computer, typically in 
 `C:\Users\<username>\.ssh\`
